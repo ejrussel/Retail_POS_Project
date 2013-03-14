@@ -17,7 +17,7 @@ module NavigationHelpers
       '/'
 
         when /^the create item\s?page$/
-         'new_inventory_path'
+         '/inventories/new'
 
 
     # Add more mappings here.
