@@ -1,0 +1,33 @@
+<h1>Listing Inventories</h1>
+<hr>
+<%= link_to 'Create New Inventory', new_inventory_path %>
+<hr>
+
+<% @inventories.each do |inventory| %>
+    <div class="span10 hero-unit">
+      <div class="span6" style="float:left">
+        <span class="upc_number"> <b> UPC Number: </b> <%= inventory.upc_number %> </span>
+      </div>
+      <div class="span3" style="float:right">
+        <span class="quantity"> <b> Quantity: </b> <%= inventory.quantity %> </span>
+      </div>
+      <div class="span6" style="float:left">
+        <span class="item_name"> <b> Item Name: </b> <%= inventory.item_name %></span>
+      </div>
+      <div class="span3" style="float:right">
+        <span class="price"> <b> Price: </b> $<%= inventory.price %> </span>
+      </div>
+      <div class="desc span9"> <b>Description:</b> <%= inventory.description %>
+      </div>
+      <div class="span9" style="text-align: right;">
+        <%= link_to "Edit".html_safe, edit_inventory_path(inventory) %>
+      </div>
+      <div class="span9" style="text-align: right;">
+        <%= link_to "Delete", inventory_path(inventory), :method => "delete" %>
+      </div>
+    </div>
+<% end %>
+
+<br />
+
+
