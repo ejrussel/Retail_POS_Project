@@ -1,0 +1,37 @@
+<div class="span10 hero-unit">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Upc number:</b>
+  <%= @inventory.upc_number %>
+</p>
+
+<p>
+  <b>Item name:</b>
+  <%= @inventory.item_name %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @inventory.quantity %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @inventory.active %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @inventory.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @inventory.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>
+</div>
