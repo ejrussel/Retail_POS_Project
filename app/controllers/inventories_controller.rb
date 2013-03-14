@@ -44,7 +44,7 @@ class InventoriesController < ApplicationController
 
     respond_to do |format|
       if @inventory.save
-        format.html { redirect_to @inventory, notice: 'Inventory was successfully created.' }
+        format.html { redirect_to inventories_url, notice: "#{@inventory.item_name} was successfully created." }
         format.json { render json: @inventory, status: :created, location: @inventory }
       else
         format.html { render action: "new" }
@@ -60,8 +60,8 @@ class InventoriesController < ApplicationController
 
     respond_to do |format|
       if @inventory.update_attributes(params[:inventory])
-        format.html { redirect_to @inventory, notice: 'Inventory was successfully updated.' }
-        format.json { head :no_content }
+        format.html {redirect_to inventories_url, notice: "#{@inventory.item_name} was successfully updated."}
+        format.json {head :no_content}
       else
         format.html { render action: "edit" }
         format.json { render json: @inventory.errors, status: :unprocessable_entity }
@@ -76,7 +76,7 @@ class InventoriesController < ApplicationController
     @inventory.destroy
 
     respond_to do |format|
-      format.html { redirect_to inventories_url }
+      format.html { redirect_to inventories_url, notire: "Item successfully deleted"}
       format.json { head :no_content }
     end
   end

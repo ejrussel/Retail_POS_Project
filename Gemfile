@@ -7,7 +7,14 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+group :test do
+  gem "cucumber-rails"
+  gem "cucumber-rails-training-wheels"
+  gem "database_cleaner"
+  gem "capybara"
+  gem "launchy"
 
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
